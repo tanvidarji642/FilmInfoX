@@ -17,12 +17,10 @@
 // };
 
 // export default Header;
-
 import React, { useState } from 'react';
 import { Navbar, Nav, Container, Form, Button, InputGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Search } from 'react-bootstrap-icons';
-
 
 const Header = () => {
     const [expanded, setExpanded] = useState(false);
@@ -32,7 +30,7 @@ const Header = () => {
             bg="dark" 
             variant="dark" 
             expand="lg" 
-            className="py-3 shadow-sm "
+            className="py-3 shadow-sm"
             expanded={expanded}
             onToggle={setExpanded}
         >
@@ -40,7 +38,7 @@ const Header = () => {
                 <Navbar.Brand 
                     as={Link} 
                     to="/" 
-                    className="fw-bold fs-4 me-4"
+                    className="fw-bold fs-4 me-auto"
                     onClick={() => setExpanded(false)}
                 >
                     <span className="text-danger">Film</span>
@@ -49,8 +47,8 @@ const Header = () => {
                 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto d-flex align-items-center">
+                <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
+                    <Nav className="d-flex align-items-center">
                         <Nav.Link 
                             as={Link} 
                             to="/popular" 
@@ -85,8 +83,7 @@ const Header = () => {
                         </Nav.Link>
                     </Nav>
                     
-                    
-                    {/* <Form className="d-flex">
+                    {/* <Form className="d-flex ms-3">
                         <InputGroup>
                             <Form.Control
                                 type="search"
@@ -98,13 +95,12 @@ const Header = () => {
                                 <Search />
                             </Button>
                         </InputGroup>
-                    </Form> */}
-                    
+                    </Form>
+                     */}
                     {/* <Nav className="ms-3">
                         <Button 
                             variant="outline-light" 
-                            size="sm" 
-                            className="me-2"
+                            size="sm"
                             onClick={() => setExpanded(false)}
                         >
                             Sign In
